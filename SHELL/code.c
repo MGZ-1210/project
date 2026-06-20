@@ -4,32 +4,40 @@
 #include <string.h>
 #include "shell.h"
 
-int main(int ac, char **av, char **env)
+void build_path(char *path, char const *repo, char const *filename)
 {
-    char *str = NULL;
-    char *buf = NULL;
-    size_t size = 0;
-    char **tab = NULL;
+    int i = 0;
+    int j = 0;
 
-    while (1) {
-        int i = 0;
-        write(1, "$> ", 3);
-        if (getline(&str, &size, stdin) == -1) {
-            return 84;
-        }
-        str = strtok(str, "\n");
-        int n = count_words(str);
-        tab = malloc(sizeof(char *) * n + 1);
-        char *part = strtok_r(str, " ", &buf);
-        while (part != NULL) {
-            tab[i] = part;
-            part = strtok_r(NULL, " ", &buf);
-            i++;
-        }
-        tab[i] = NULL;
-        for (int i = 0; tab[i]; i++) {
-        printf("%s\n", tab[i]);
+    while (repo[i] != '\0') {
+        path[i] = repo[i];
+        i++;
     }
+    path[i] = '/';
+    i++;
+    while (filename[j] != '\0') {
+        path[i] = filename[j];
+        i++;
+        j++;
     }
-    return 0;
+    path[i] = '\0';
+}
+
+char **var_env(char **env)
+{
+    int n = 0;
+    char **var = NULL;
+
+    int j = 0;
+    for (int i = 0; env[i]; i++) {
+        n++;
+    }
+    var = malloc(sizeof(char *) * n);
+    if (!var)
+        return NULL;
+    for (j = 0; env[j]; j++) {
+        var[j] = my_strdup(env[j]);
+    }
+    var[j] = NULL;
+    return var;
 }
