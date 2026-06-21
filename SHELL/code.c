@@ -32,7 +32,7 @@ char **var_env(char **env)
     for (int i = 0; env[i]; i++) {
         n++;
     }
-    var = malloc(sizeof(char *) * n);
+    var = malloc(sizeof(char *) * (n + 1));
     if (!var)
         return NULL;
     for (j = 0; env[j]; j++) {

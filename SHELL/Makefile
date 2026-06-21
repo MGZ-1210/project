@@ -4,11 +4,13 @@ NAME	=	shell
 
 SRC_MAIN	=	main.c
 SRC_FILES	=	my_strcpy.c\
-			my_strlen.c\
-			my_strdup.c\
-			my_strcmp.c\
-			code.c\
-			count_words.c
+				my_strlen.c\
+				my_strdup.c\
+				my_strchr.c\
+				my_strcmp.c\
+				my_strncmp.c\
+				code.c\
+				count_words.c
 
 OBJ	=	$(SRC_FILES:.c=.o)\
 		$(SRC_MAIN:.c=.o)
