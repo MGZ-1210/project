@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2026
+** count_words
+** File description:
+** return the number words in sentence
+*/
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>

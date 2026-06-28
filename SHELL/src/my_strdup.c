@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "shell.h"
+#include "../include/minishell1.h"
 
 char *my_strdup(char const *src)
 {

@@ -1,8 +1,14 @@
+/*
+** EPITECH PROJECT, 2026
+** minishell1
+** File description:
+** strchr
+*/
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include "shell.h"
 
 char *my_strchr(char *str, int c)
 {

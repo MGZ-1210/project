@@ -1,16 +1,25 @@
+##
+## EPITECH PROJECT, 2026
+## Makefile
+## File description:
+## compile project
+##
+
 CC	=	clang
 
-NAME	=	shell
+NAME	=	mysh
 
-SRC_MAIN	=	main.c
-SRC_FILES	=	my_strcpy.c\
-				my_strlen.c\
-				my_strdup.c\
-				my_strchr.c\
-				my_strcmp.c\
-				my_strncmp.c\
-				code.c\
-				count_words.c
+SRC_MAIN	=	src/main.c
+
+SRC_FILES	=	src/my_strcpy.c\
+				src/my_strlen.c\
+				src/my_strdup.c\
+				src/my_strchr.c\
+				src/my_strcmp.c\
+				src/my_strncmp.c\
+				src/linked_list.c\
+				src/path_env.c\
+				src/count_words.c
 
 OBJ	=	$(SRC_FILES:.c=.o)\
 		$(SRC_MAIN:.c=.o)
@@ -22,8 +31,8 @@ $(NAME):	$(OBJ)
 
 clean:
 	rm -f $(OBJ)
-	rm -f .c~
-	rm -f .h~
+	rm -f src/.c~
+	rm -f include/.h~
 	rm -f Makefile~
 
 fclean:	clean
